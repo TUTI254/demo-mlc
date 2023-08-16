@@ -26,7 +26,7 @@ const Mlc = (props: Props) => {
     // save data to local storage
     localStorage.setItem("mlcData", JSON.stringify(data));
     // generate qr code
-    QRCode.toDataURL(`https://localhost:3000/mlc/${data.mlcId}`).then(
+    QRCode.toDataURL(`${process.env.WEB_URL}/mlc/${data.mlcId}`).then(
       setQrCode
     );
   };
